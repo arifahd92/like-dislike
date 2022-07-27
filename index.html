@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #btn{
+        background-color: aqua;
+        cursor: pointer;
+        height: 40px;
+        width: 60px;
+    }
+  img{
+    height: 100px;
+    width: 100px;
+    position: relative;
+    top: 30px;
+    cursor: pointer;
+  } 
+</style>
+<body>
+  <form>
+    <img src="https://pps.whatsapp.net/v/t61.24694-24/249018915_3145131035805773_600004317452237501_n.jpg?ccb=11-4&oh=01_AVynF0Gy_H7II1CrVaXYmHRD9kBG7ouLseuY8096QVA-vw&oe=62F0E2DA" alt="" class="img" id="clk">
+    click on this image to vote arif:<input type="text" id="lc" value="0" > <br> <br>
+     <img src="https://pps.whatsapp.net/v/t61.24694-24/293673341_1123927618474947_3823287717617212686_n.jpg?ccb=11-4&oh=01_AVydJuhcmoWjKMXl5Gv8IbFeQ4djujSpEV76KRSkLV6rEA&oe=62F1194F" id="di" alt="" srcset="">
+     click on this image to vote irshad: <input type="text" name="" id="dc">
+     <br> <br><br>
+    click on submit to see who is winner <input type="button" value="submit" id="btn">
+     <div id="like"></div>
+     <div id="dlk"></div>
+      </form>
+</body>
+</html>
+
+
+
+
+
+<script>
+
+    let div2 = document.getElementById("dlk");
+   let screen1=document.getElementById("lc");
+   let image1 =document.getElementById("clk")
+   let screen2=document.getElementById("dc");
+   let image2 =document.getElementById("di")
+   let  div1 = document.getElementById("like");
+   sbmt= document.getElementById("btn")
+   let cv=0
+   let dv=0
+   image1.addEventListener("click",(e)=>{
+    cv++;
+    screen1.value=cv;
+   })
+   image2.addEventListener("click",(e)=>{
+    dv++
+    screen2.value=dv;
+   })
+   sbmt.addEventListener('click',()=>{
+
+   div1.innerText="arif has total votes= "+cv
+   div2.innerText="irshad has total votes="+dv
+   if(dv>=cv){
+    screen2.style.backgroundColor="red"
+    div2.style.color="red"
+    div1.style.color="black"
+    screen1.style.backgroundColor="white"
+   }
+   else{
+    screen1.style.backgroundColor ='red' 
+    div2.style.color="black"
+    screen2.style.backgroundColor="white"
+    div1.style.color="red"
+    }
+    // document.write("likers are winner")
+   })
+ 
+
+
+
+
+
+</script>
